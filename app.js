@@ -4,7 +4,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 // This matches the name we used in the Terraform 'connection_string' block
-const connectionString = process.env.CUSTOMCONNSTR_DatabaseConnectionString;
+const connectionString = process.env.SQLAZURECONNSTR_DatabaseConnectionString;
 
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");
