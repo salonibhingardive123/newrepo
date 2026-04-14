@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>3-Tier App: Frontend 🌐</h1>
+    <div id="status">Connecting to backend...</div>
+    <div id="db-status"></div>
+
+    <script>
+        // Replace this with your actual App Service URL
+        const BACKEND_URL = "app-service-saloni.azurewebsites.net";
+
+        async function init() {
+            try {
+                // Test API
+                const apiRes = await fetch(`${BACKEND_URL}/api/data`);
+                const apiData = await apiRes.json();
+                document.getElementById('status').innerText = "Backend: " + apiData.message;
+
+                // Test DB via Backend
+                const dbRes = await fetch(`${BACKEND_URL}/db-test`);
+                const dbData = await dbRes.json();
+                document.getElementById('db-status').innerText = "Database: " + dbData.message;
+            } catch (err) {
+                document.getElementById('status').innerText = "Error connecting to backend! ❌";
+            }
+        }
+        init();
+    </script>
+</body>
+</html>
