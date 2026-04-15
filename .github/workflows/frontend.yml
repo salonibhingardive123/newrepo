@@ -23,3 +23,4 @@ jobs:
           app_location: "/" # Keep as / if your index.html is in the main folder
           api_location: "" 
           output_location: "" 
+          skip_app_build: true
