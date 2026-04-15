@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 const connectionString = process.env.SQLAZURECONNSTR_DatabaseConnectionString;
 
 app.get("/", (req, res) => {
-  res.send("Backend is running 🚀");
+  res.json("Backend is running 🚀");
 });
 
 // New route to test the actual DB connection
